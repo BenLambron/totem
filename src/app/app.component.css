@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 32px;
+  width: 800px;
+  padding: 24px;
+}
+
+.card-content {
+  width: 100%;
+}
+
+.instructions {
+  width: 100%;
+}
+
+.radio-group-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+  padding-left: 16px;
+}
+
+.totem-radio-group {
+  padding: 8px 0;
+}
+
+.totem-radio-button {
+  padding-right: 32px;
+  font-size: 16px;
+}
+
+.form-footer {
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.disclaimer {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.submit-button {
+  width: 120px;
+  height: 48px;
+  font-size: 18px;
+}
+
+.reset-button {
+  height: 48px;
+  font-size: 18px;
+}
+
+.loading-panel {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.totem-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.totem {
+  margin: 8px;
+}
+
+.totem-img {
+  max-width: 200px;
+}
+
+.totem-title {
+  letter-spacing: 5px;
+  font-weight: bolder;
+  margin: 8px;
+}
+
+.totem-description {
+  text-align: center;
+  padding: 0 40px;
+  font-size: 18px;
+}
+
+.card-content-footer {
+  padding-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,371 @@
+<div class="container">
+  <ng-container *ngIf="!finalTotem">
+    <mat-card class="card">
+      <mat-card-content class="card-content">
+        <h2 class="instructions">
+          Veuillez indiquer sur une échelle de 1 à 5 comment chaque
+          proverbe est typique de votre façon de résoudre les conflits.
+        </h2>
+        <form [formGroup]="totemFormGroup"
+              (ngSubmit)="onTotemFormSubmit(totemFormGroup.value)">
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-1">
+                {{ proverbs[0] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-1"
+                             name="question1"
+                             formControlName="question1"
+                             [formControl]="question1FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-2">
+                {{ proverbs[1] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-2"
+                             name="question2"
+                             formControlName="question2"
+                             [formControl]="question2FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-3">
+                {{ proverbs[2] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-3"
+                             name="question3"
+                             formControlName="question3"
+                             [formControl]="question3FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-4">
+                {{ proverbs[3] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-4"
+                             name="question4"
+                             formControlName="question4"
+                             [formControl]="question4FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-5">
+                {{ proverbs[4] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-5"
+                             name="question5"
+                             formControlName="question5"
+                             [formControl]="question5FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-6">
+                {{ proverbs[5] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-6"
+                             name="question6"
+                             formControlName="question6"
+                             [formControl]="question6FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-7">
+                {{ proverbs[6] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-7"
+                             name="question7"
+                             formControlName="question7"
+                             [formControl]="question7FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-8">
+                {{ proverbs[7] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-8"
+                             name="question8"
+                             formControlName="question8"
+                             [formControl]="question8FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-9">
+                {{ proverbs[8] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-9"
+                             name="question9"
+                             formControlName="question9"
+                             [formControl]="question9FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-10">
+                {{ proverbs[9] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-10"
+                             name="question10"
+                             formControlName="question10"
+                             [formControl]="question10FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-11">
+                {{ proverbs[10] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-11"
+                             name="question11"
+                             formControlName="question11"
+                             [formControl]="question11FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-12">
+                {{ proverbs[11] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-12"
+                             name="question12"
+                             formControlName="question12"
+                             [formControl]="question12FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-13">
+                {{ proverbs[12] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-13"
+                             name="question13"
+                             formControlName="question13"
+                             [formControl]="question13FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-14">
+                {{ proverbs[13] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-14"
+                             name="question14"
+                             formControlName="question14"
+                             [formControl]="question14FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="radio-group-container">
+            <h3>
+              <label for="radio-group-question-15">
+                {{ proverbs[14] }}
+              </label>
+            </h3>
+            <mat-radio-group class="totem-radio-group" id="radio-group-question-15"
+                             name="question15"
+                             formControlName="question15"
+                             [formControl]="question15FormControl">
+              <mat-radio-button class="totem-radio-button" value="1">Jamais</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="2">Rarement</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="3">Quelquefois</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="4">Fréquemment</mat-radio-button>
+              <mat-radio-button class="totem-radio-button" value="5">Très souvent</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="form-footer">
+            <div class="disclaimer">
+              Ce test ne peut pas servir à établir un diagnostic.
+            </div>
+            <button class="submit-button"
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                    [disabled]="isFormDisabled">
+              Envoyer
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+
+  <ng-container *ngIf="!!finalTotem">
+    <mat-card class="card">
+      <mat-card-content class="card-content">
+        <ng-container [ngSwitch]="finalTotem">
+          <ng-container *ngSwitchCase="turtleTotem">
+            <div class="totem-container">
+              <div class="totem">
+                <img class="totem-img" [src]="turtleTotemLink" alt="Tortue">
+              </div>
+              <div class="totem-title">
+                <h2>LA TORTUE</h2>
+              </div>
+              <div class="totem-description">
+                {{ turtleTotemDescription }}
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="owlTotem">
+            <div class="totem-container">
+              <div class="totem">
+                <img class="totem-img" [src]="owlTotemLink" alt="Hibou">
+              </div>
+              <div class="totem-title">
+                <h2>LE HIBOU</h2>
+              </div>
+              <div class="totem-description">
+                {{ owlTotemDescription }}
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="teddyBearTotem">
+            <div class="totem-container">
+              <div class="totem">
+                <img class="totem-img" [src]="teddyBearTotemLink" alt="Ourson">
+              </div>
+              <div class="totem-title">
+                <h2>L'OURSON</h2>
+              </div>
+              <div class="totem-description">
+                {{ teddyBearTotemDescription }}
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="sharkTotem">
+            <div class="totem-container">
+              <div class="totem">
+                <img class="totem-img" [src]="sharkTotemLink" alt="Requin">
+              </div>
+              <div class="totem-title">
+                <h2>LE REQUIN</h2>
+              </div>
+              <div class="totem-description">
+                {{ sharkTotemDescription }}
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="foxTotem">
+            <div class="totem-container">
+              <div class="totem">
+                <img class="totem-img" [src]="foxTotemLink" alt="Renard">
+              </div>
+              <div class="totem-title">
+                <h2>LE RENARD</h2>
+              </div>
+              <div class="totem-description">
+                {{ foxTotemDescription }}
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+        <div class="card-content-footer">
+          <button class="reset-button"
+                  mat-raised-button
+                  color="primary"
+                  type="button"
+                  (click)="onResetButtonClick()">
+            Recommencer
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>
+
+<ng-container *ngIf="isSubmitting">
+  <div class="loading-panel">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+</ng-container>
