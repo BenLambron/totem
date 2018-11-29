@@ -5,7 +5,7 @@ import 'hammerjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   readonly proverbs: Array<string> = [
@@ -29,27 +29,23 @@ export class AppComponent implements OnInit {
   readonly totems = [
     {
       name: 'turtle',
-      link: 'http://pluspng.com/img-png/hawaiian-turtle-png-tribal-turtle-clipart-282.png',
       description: 'Évite le conflit, se retire, abandonne ses buts et ses relations espérant que le conflit disparaîtra par magie.'
     },
     {
       name: 'owl',
-      link: 'http://res.freestockphotos.biz/pictures/16/16851-illustration-of-an-owl-pv.png',
-      description: 'Valorise la relation et le but qu\'il poursuit. Il écoute l\'autre pour trouver ensemble une solution satisfaisante aux deux parties.'
+      description: 'Valorise la relation et le but qu\'il poursuit. Il écoute l\'autre pour trouver ' +
+        'ensemble une solution satisfaisante aux deux parties.'
     },
     {
       name: 'fox',
-      link: 'https://orig00.deviantart.net/d61c/f/2011/116/4/c/4c637ade2ad93105318d482fc3803aed-d3eytjl.png',
       description: 'Cherche le compromis. Il renonce à une partie de son but et persuade l\'autre d\'en abandonner une partie.'
     },
     {
       name: 'teddyBear',
-      link: 'https://clip2art.com/images/glitch-clipart-outline-6.png',
       description: 'Sacrifie son but au profit de la relation tellement il veut être aimé et a peur d\'abîmer la relation.'
     },
     {
       name: 'shark',
-      link: 'http://pngimg.com/uploads/tattoo/tattoo_PNG5460.png',
       description: 'Essaie de dominer les autres et de gagner à n\'importe quel prix. Il est agressif, menaçant, attaquant.'
     }
   ];
@@ -130,20 +126,12 @@ export class AppComponent implements OnInit {
     return 'turtle';
   }
 
-  get turtleTotemLink(): string {
-    return this.totems.find(totem => totem.name === 'turtle').link;
-  }
-
   get turtleTotemDescription(): string {
     return this.totems.find(totem => totem.name === 'turtle').description;
   }
 
   get owlTotem(): string {
     return 'owl';
-  }
-
-  get owlTotemLink(): string {
-    return this.totems.find(totem => totem.name === 'owl').link;
   }
 
   get owlTotemDescription(): string {
@@ -154,10 +142,6 @@ export class AppComponent implements OnInit {
     return 'teddyBear';
   }
 
-  get teddyBearTotemLink(): string {
-    return this.totems.find(totem => totem.name === 'teddyBear').link;
-  }
-
   get teddyBearTotemDescription(): string {
     return this.totems.find(totem => totem.name === 'teddyBear').description;
   }
@@ -166,20 +150,12 @@ export class AppComponent implements OnInit {
     return 'shark';
   }
 
-  get sharkTotemLink(): string {
-    return this.totems.find(totem => totem.name === 'shark').link;
-  }
-
   get sharkTotemDescription(): string {
     return this.totems.find(totem => totem.name === 'shark').description;
   }
 
   get foxTotem(): string {
     return 'fox';
-  }
-
-  get foxTotemLink(): string {
-    return this.totems.find(totem => totem.name === 'fox').link;
   }
 
   get foxTotemDescription(): string {
@@ -191,6 +167,7 @@ export class AppComponent implements OnInit {
   }
 
   onTotemFormSubmit(formData): void {
+    this.isSubmitting = true;
     window.scrollTo(0, 0);
     this.processData(formData);
   }
@@ -224,25 +201,26 @@ export class AppComponent implements OnInit {
     const totems = [
       {
         totem: 'turtle',
-        value: (parseInt(answers.question1) + parseInt(answers.question6) + parseInt(answers.question11))
+        value: (parseInt(answers.question1, 10) + parseInt(answers.question6, 10) + parseInt(answers.question11, 10))
       },
       {
         totem: 'shark',
-        value: (parseInt(answers.question2) + parseInt(answers.question7) + parseInt(answers.question12))
+        value: (parseInt(answers.question2, 10) + parseInt(answers.question7, 10) + parseInt(answers.question12, 10))
       },
       {
         totem: 'teddyBear',
-        value: (parseInt(answers.question3) + parseInt(answers.question8) + parseInt(answers.question13))
+        value: (parseInt(answers.question3, 10) + parseInt(answers.question8, 10) + parseInt(answers.question13, 10))
       },
       {
         totem: 'fox',
-        value: (parseInt(answers.question4) + parseInt(answers.question9) + parseInt(answers.question14))
+        value: (parseInt(answers.question4, 10) + parseInt(answers.question9, 10) + parseInt(answers.question14, 10))
       },
       {
         totem: 'owl',
-        value: (parseInt(answers.question5) + parseInt(answers.question10) + parseInt(answers.question15))
+        value: (parseInt(answers.question5, 10) + parseInt(answers.question10, 10) + parseInt(answers.question15, 10))
       }
     ];
     this.finalTotem = totems.sort((a, b) => b.value - a.value)[0].totem;
+    this.isSubmitting = false;
   }
 }

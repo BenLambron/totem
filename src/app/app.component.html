@@ -265,7 +265,7 @@
           </div>
           <div class="form-footer">
             <div class="disclaimer">
-              Ce test ne peut pas servir à établir un diagnostic.
+              Ce test ne peut servir à établir un diagnostic.
             </div>
             <button class="submit-button"
                     mat-raised-button
@@ -287,7 +287,7 @@
           <ng-container *ngSwitchCase="turtleTotem">
             <div class="totem-container">
               <div class="totem">
-                <img class="totem-img" [src]="turtleTotemLink" alt="Tortue">
+                <img class="totem-img" src="/assets/images/turtle.png" alt="Tortue">
               </div>
               <div class="totem-title">
                 <h2>LA TORTUE</h2>
@@ -300,7 +300,7 @@
           <ng-container *ngSwitchCase="owlTotem">
             <div class="totem-container">
               <div class="totem">
-                <img class="totem-img" [src]="owlTotemLink" alt="Hibou">
+                <img class="totem-img" src="/assets/images/owl.png" alt="Hibou">
               </div>
               <div class="totem-title">
                 <h2>LE HIBOU</h2>
@@ -313,7 +313,7 @@
           <ng-container *ngSwitchCase="teddyBearTotem">
             <div class="totem-container">
               <div class="totem">
-                <img class="totem-img" [src]="teddyBearTotemLink" alt="Ourson">
+                <img class="totem-img" src="/assets/images/teddyBear.png" alt="Ourson">
               </div>
               <div class="totem-title">
                 <h2>L'OURSON</h2>
@@ -326,7 +326,7 @@
           <ng-container *ngSwitchCase="sharkTotem">
             <div class="totem-container">
               <div class="totem">
-                <img class="totem-img" [src]="sharkTotemLink" alt="Requin">
+                <img class="totem-img" src="/assets/images/shark.png" alt="Requin">
               </div>
               <div class="totem-title">
                 <h2>LE REQUIN</h2>
@@ -339,7 +339,7 @@
           <ng-container *ngSwitchCase="foxTotem">
             <div class="totem-container">
               <div class="totem">
-                <img class="totem-img" [src]="foxTotemLink" alt="Renard">
+                <img class="totem-img" src="/assets/images/fox.png" alt="Renard">
               </div>
               <div class="totem-title">
                 <h2>LE RENARD</h2>
@@ -363,9 +363,3 @@
     </mat-card>
   </ng-container>
 </div>
-
-<ng-container *ngIf="isSubmitting">
-  <div class="loading-panel">
-    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-  </div>
-</ng-container>
