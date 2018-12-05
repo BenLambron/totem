@@ -38,7 +38,7 @@
 
   @media only screen and (max-width: 425px) {
     display: block;
-    margin: 0;
+    margin-top: 1rem;
   }
 }
 
@@ -152,6 +152,7 @@
     .card-content-footer {
       padding-top: 2rem;
       display: flex;
+      justify-content: flex-end;
 
       .reset-button {
         height: 2.5rem;
